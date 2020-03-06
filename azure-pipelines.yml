@@ -11,14 +11,13 @@ pool:
 
 steps:
 - task: UniversalPackages@0
-  displayName: 'Universal download'
   inputs:
-    command: download
-    vstsFeed: 'Build-Tools-Sandbox'
-    vstsFeedPackage: 'rustup'
-    vstsPackageVersion: 0.0.1
-    downloadDirectory: '$(Build.SourcesDirectory)'
-
+    command: 'download'
+    downloadDirectory: '$(System.DefaultWorkingDirectory)'
+    feedsToUse: 'internal'
+    vstsFeed: '63767f55-d4ed-4b12-b77e-0c9f2f118fd6/1a6eb10a-625f-49ea-8622-2421069b506b'
+    vstsFeedPackage: 'd0f4d5d1-d896-4781-90b8-cc01ed6f9bf4'
+    vstsPackageVersion: '0.0.1'
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
